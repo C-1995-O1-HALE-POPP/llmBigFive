@@ -6,6 +6,4 @@ __pycache__/
 *.db
 *.sqlite
 *.log
-*.csv
-.json
 .DS_Store
