@@ -1,0 +1,992 @@
+[
+  {
+    "user": ".",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 50
+      },
+      "A": {
+        "score": 70
+      },
+      "N": {
+        "score": 60
+      }
+    }
+  },
+  {
+    "user": "1Pin",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "Biyao",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 90
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "COCONUTS",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 75
+      },
+      "N": {
+        "score": 60
+      }
+    }
+  },
+  {
+    "user": "Clover",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "Coisini",
+    "scores": {
+      "O": {
+        "score": 65
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 80
+      },
+      "A": {
+        "score": 90
+      },
+      "N": {
+        "score": 85
+      }
+    }
+  },
+  {
+    "user": "DCicada（李欣语）",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 90
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "Enid55",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 80
+      },
+      "A": {
+        "score": 75
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "Eve",
+    "scores": {
+      "O": {
+        "score": 80
+      },
+      "C": {
+        "score": 75
+      },
+      "E": {
+        "score": 70
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "Lescourantsdair",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "Min Yin",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 90
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 75
+      }
+    }
+  },
+  {
+    "user": "alwayssmile高峰",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 85
+      },
+      "E": {
+        "score": 90
+      },
+      "A": {
+        "score": 75
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "guji",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 80
+      },
+      "A": {
+        "score": 75
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "lily",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 90
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 75
+      }
+    }
+  },
+  {
+    "user": "my",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "tina",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 80
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "xiaowen",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 80
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 75
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "yh.P小啦",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 65
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "yy",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 80
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 75
+      }
+    }
+  },
+  {
+    "user": "三水.",
+    "scores": {
+      "O": {
+        "score": 65
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 75
+      }
+    }
+  },
+  {
+    "user": "佳味园丁丁",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "冬米",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "刘浩宇",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 65
+      },
+      "A": {
+        "score": 75
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "刺猬",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 90
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "吕江雅",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "哈哈哈",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 65
+      },
+      "N": {
+        "score": 60
+      }
+    }
+  },
+  {
+    "user": "喵过星空",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "噜咪",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "小白菜",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "懵0.0",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 65
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "我是月亮",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "方青松",
+    "scores": {
+      "O": {
+        "score": 65
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "次等秘密",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 80
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "汀",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "江暮",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 90
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "汤元（张熙元）",
+    "scores": {
+      "O": {
+        "score": 80
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "洛克曼",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 75
+      },
+      "E": {
+        "score": 60
+      },
+      "A": {
+        "score": 70
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "洛杉矶的W",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "潇潇",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 75
+      }
+    }
+  },
+  {
+    "user": "烂泥",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "煎饼",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 65
+      }
+    }
+  },
+  {
+    "user": "爱吃萝卜爱吃菜",
+    "scores": {
+      "O": {
+        "score": 80
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 70
+      },
+      "N": {
+        "score": 60
+      }
+    }
+  },
+  {
+    "user": "特恩",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 75
+      }
+    }
+  },
+  {
+    "user": "特特",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 70
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  },
+  {
+    "user": "纨兰",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "苹果人",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 80
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "蜉蝣",
+    "scores": {
+      "O": {
+        "score": 75
+      },
+      "C": {
+        "score": 60
+      },
+      "E": {
+        "score": 85
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 70
+      }
+    }
+  },
+  {
+    "user": "说笑",
+    "scores": {
+      "O": {
+        "score": 85
+      },
+      "C": {
+        "score": 70
+      },
+      "E": {
+        "score": 65
+      },
+      "A": {
+        "score": 80
+      },
+      "N": {
+        "score": 75
+      }
+    }
+  },
+  {
+    "user": "赵阳",
+    "scores": {
+      "O": {"score": 85},
+      "C": {"score": 70},
+      "E": {"score": 75},
+      "A": {"score": 80},
+      "N": {"score": 75}
+    }
+  },
+  {
+    "user": "🐏",
+    "scores": {
+      "O": {
+        "score": 70
+      },
+      "C": {
+        "score": 65
+      },
+      "E": {
+        "score": 75
+      },
+      "A": {
+        "score": 85
+      },
+      "N": {
+        "score": 80
+      }
+    }
+  }
+]
