@@ -22,7 +22,8 @@
         "think": "The user's keywords include 'nervous tension', 'anxiety', and 'emotional' in 'social issues and public welfare' and 'emotion and interpersonal relationships', which suggest some level of neuroticism. However, the presence of 'calm', 'peaceful', and 'relaxation' in 'family and daily life' indicates a balance. The overall score reflects moderate emotional stability.",
         "score": 55
       }
-    }
+    },
+    "uid": "18"
   },
   {
     "user": "1Pin",
@@ -47,57 +48,8 @@
         "think": "The user appears to have high emotional stability. Keywords like 'happiness', 'relaxation', 'celebration', and 'warmth' suggest a positive emotional tone and good stress management. The absence of negative emotional keywords and the presence of supportive and positive interactions indicate low neuroticism.",
         "score": 80
       }
-    }
-  },
-  {
-    "user": "Biyao",
-    "scores": {
-      "O": {
-        "think": "The user's keywords heavily emphasize positive emotional experiences and social interactions ('幸福', '庆祝', '浪漫', '祝福', '亲密', '友谊', '婚礼', '家庭', '情感', '朋友'), which suggests a high level of openness to experiences, especially in the context of relationships and social activities. Additionally, the presence of words like '摄影', '旅行', '探险', '自然', and '户外活动' in the '旅行和冒险' theme indicates a strong appreciation for aesthetics, adventure, and new experiences, further supporting high openness. The weight of these keywords is substantial, with many above 50, indicating their importance in the user's personality profile.",
-        "score": 85
-      },
-      "C": {
-        "think": "The keywords related to '工作和学习' ('成长', '学习', '自信', '分享', '教育', '友谊', '成果', '庆祝', '教室', '学生') are present but with very low weights (all below 5.38), suggesting that work and learning are not central themes in the user's current focus. The lack of high-weight keywords related to planning, organization, or goal-setting in other themes implies a moderate to low level of conscientiousness. The user seems more focused on emotional and social experiences rather than structured or goal-oriented activities.",
-        "score": 45
-      },
-      "E": {
-        "think": "The user's profile is dominated by social and interactive keywords ('幸福', '庆祝', '浪漫', '祝福', '亲密', '友谊', '婚礼', '家庭', '情感', '朋友', '互动', '分享', '社交', '聚会') across multiple themes, with high weights (many above 70). This indicates a strong tendency toward sociability, enthusiasm, and a desire for social engagement. The repeated emphasis on celebrations and positive social interactions ('庆祝' appears multiple times with high weights) further underscores high extraversion.",
-        "score": 90
-      },
-      "A": {
-        "think": "The user's keywords are overwhelmingly positive and relationship-focused ('幸福', '祝福', '亲密', '友谊', '家庭', '朋友', '温馨', '分享'), suggesting a high level of agreeableness. The emphasis on positive social interactions and emotional connections ('浪漫', '婚礼', '情感') indicates a cooperative, empathetic, and altruistic personality. The high weights of these keywords (many above 70) reinforce the importance of agreeableness in the user's personality.",
-        "score": 95
-      },
-      "N": {
-        "think": "The user's keywords are almost exclusively positive and focused on happiness, celebration, and relaxation ('幸福', '庆祝', '浪漫', '宁静', '放松', '休闲', '温馨'). There is very little mention of stress, anxiety, or negative emotions, except for a few low-weight keywords ('生活压力', '心理健康', '情感表达') in the '社会问题和公益' theme, which are negligible (all below 0.69). This suggests a high level of emotional stability and low neuroticism.",
-        "score": 90
-      }
-    }
-  },
-  {
-    "user": "COCONUTS",
-    "scores": {
-      "O": {
-        "think": "关键词如'社交媒体'、'互动'、'表演'、'音乐'、'娱乐'、'文化'、'探索'、'摄影'、'风景'、'旅行'、'创新'等，权重较高，且多出现在'爱好和娱乐'、'旅行和冒险'、'工作和学习'等主题中，表明用户具有较高的好奇心、审美、创造力和接受新事物的意愿。因此，开放性评分较高。",
-        "score": 85
-      },
-      "C": {
-        "think": "关键词如'成就'、'活动'、'庆祝'、'创新'、'交流'、'分享'、'毕业'、'游戏'、'年度最佳'等，权重中等，多出现在'工作和学习'主题中，表明用户有一定的自律性、计划性和目标导向。但缺乏更高权重的关键词支持，责任心评分中等。",
-        "score": 65
-      },
-      "E": {
-        "think": "关键词如'社交媒体'、'互动'、'表演'、'活动'、'聚会'、'分享'、'情感'、'交流'、'支持'、'朋友'、'社交'等，权重高且频繁出现，表明用户具有较高的活力、社交能力和表达意愿。因此，外向性评分很高。",
-        "score": 90
-      },
-      "A": {
-        "think": "关键词如'互动'、'分享'、'支持'、'朋友'、'情感'、'回忆'、'幽默'等，权重中等，表明用户具有一定的合作性、共情和利他倾向。但缺乏更高权重的关键词支持，宜人性评分中等。",
-        "score": 70
-      },
-      "N": {
-        "think": "关键词如'情绪'、'大喊'、'极端'等，权重较低，且负面情绪相关关键词较少，表明用户情绪控制能力较好，焦虑倾向较低。因此，情绪稳定性评分较高。",
-        "score": 80
-      }
-    }
+    },
+    "uid": "46"
   },
   {
     "user": "Clover",
@@ -122,7 +74,8 @@
         "think": "The user's keywords emphasize '宁静', '放松', '快乐', and '幸福', which suggest emotional stability and a positive outlook. The lack of high-weight keywords related to stress, anxiety, or negative emotions supports this. The overall tone is calm and content, indicating low neuroticism (high emotional stability).",
         "score": 85
       }
-    }
+    },
+    "uid": "19"
   },
   {
     "user": "Coisini",
@@ -147,7 +100,8 @@
         "think": "The keywords 'happiness', 'warmth', 'joy', and 'family' suggest positive emotional states, which are indicators of high emotional stability (low neuroticism). The absence of negative emotional keywords further supports this. The low-weight keyword 'career pressure' does not significantly impact this assessment.",
         "score": 80
       }
-    }
+    },
+    "uid": "42"
   },
   {
     "user": "DCicada（李欣语）",
@@ -172,7 +126,8 @@
         "think": "The user frequently mentions '宁静', '放松', '快乐', and '温馨', which are associated with positive emotional states and low anxiety. The absence of high-weight keywords related to stress, anxiety, or negative emotions suggests a high level of emotional stability. The low weights of any potentially stressful or negative keywords further support this assessment.",
         "score": 80
       }
-    }
+    },
+    "uid": "24"
   },
   {
     "user": "Enid55",
@@ -197,32 +152,8 @@
         "think": "情绪稳定性方面，用户的关键词如‘快乐’（权重135.65和129.88）、‘休闲’（权重109.32）、‘放松’（权重84.09）等，显示出用户倾向于积极和放松的情绪状态。然而，‘挑战’（权重389.05）和‘游戏’（权重394.31）可能暗示用户在竞争或压力情境下的情绪反应。综合考虑，情绪稳定性处于中等偏上水平。",
         "score": 70
       }
-    }
-  },
-  {
-    "user": "Eve",
-    "scores": {
-      "O": {
-        "think": "The user's keywords predominantly revolve around family, pets, and daily life, which suggests a preference for familiar and routine environments. However, there are some indicators of openness such as 'innovation' in work and learning (43.32), 'industry trends' (26.66), and 'digital transformation' (19.99), which show some interest in new ideas and changes. The hobbies and travel-related keywords like 'scenery' (7.17), 'travel' (5.38), and 'adventure' (5.38) also suggest a moderate level of curiosity and appreciation for new experiences. Overall, the user seems to balance between routine and some openness to new experiences.",
-        "score": 65
-      },
-      "C": {
-        "think": "The user shows signs of conscientiousness through keywords like 'career development' (29.99), 'solutions' (19.99), and 'goal setting' (0.69), which indicate planning and goal-oriented behavior. The emphasis on 'family' (103.37), 'daily life' (72.74), and 'lifestyle' (84.23) also suggests a structured and organized approach to personal life. However, the lack of highly weighted keywords directly related to discipline or meticulousness in work or personal habits suggests a moderate rather than high level of conscientiousness.",
-        "score": 70
-      },
-      "E": {
-        "think": "The user's keywords like 'interaction' (99.54), 'social media' (68.92), and 'communication' (26.66) indicate a sociable and communicative nature. The presence of 'friendship' (3.89), 'emotional support' (3.89), and 'companionship' (3.89) in the context of emotions and interpersonal relationships further supports a tendency towards social engagement. However, the relatively low weight of these keywords compared to family and daily life suggests that the user's sociability is more pronounced in familiar settings rather than in broader social contexts.",
-        "score": 75
-      },
-      "A": {
-        "think": "The user's high emphasis on 'family' (103.37), 'warmth' (95.72), and 'cute' (80.4) in the context of family and daily life suggests a strong inclination towards agreeableness, characterized by warmth and caring. The keywords 'cooperation' (29.99) and 'emotional support' (3.89) also indicate a cooperative and empathetic nature. The overall pattern of keywords points to a high level of agreeableness, with a focus on harmonious relationships and caring for others.",
-        "score": 85
-      },
-      "N": {
-        "think": "The user's keywords related to emotional stability are less prominent, but the emphasis on 'warmth' (95.72), 'cute' (80.4), and 'daily life' (72.74) suggests a generally stable and positive emotional state. The absence of highly weighted keywords related to stress, anxiety, or negative emotions indicates a relatively low level of neuroticism. The presence of 'emotional support' (3.89) and 'confidence' (3.89) further supports emotional stability.",
-        "score": 80
-      }
-    }
+    },
+    "uid": "6"
   },
   {
     "user": "Lescourantsdair",
@@ -247,7 +178,8 @@
         "think": "情绪稳定性方面，用户在‘家庭和日常生活’主题中的‘温馨’、‘宁静’、‘放松’等关键词，以及‘旅行和冒险’主题中的‘宁静’、‘放松’等关键词，显示用户倾向于寻求平静和放松的环境。‘情感和人际关系’主题中的‘心情’、‘快乐’等关键词也表明用户情绪较为积极。虽然‘工作和学习’主题中的‘考试’等关键词可能带来一定压力，但整体来看，情绪稳定性较高。",
         "score": 70
       }
-    }
+    },
+    "uid": "9"
   },
   {
     "user": "Min Yin",
@@ -272,32 +204,8 @@
         "think": "The user frequently mentions 'relaxation', 'peace', 'happiness', and 'joy', and there are no keywords indicating stress, anxiety, or negative emotions. This suggests good emotional stability and low neuroticism. The high weights of these positive emotional keywords support a high score in Emotional Stability.",
         "score": 85
       }
-    }
-  },
-  {
-    "user": "alwayssmile高峰",
-    "scores": {
-      "O": {
-        "think": "The keywords predominantly relate to professional activities like '会议', '演讲', '讨论', and '职业发展', which suggest a focus on structured and conventional work environments rather than creative or novel pursuits. The high weights of these keywords indicate a strong emphasis on traditional work methods, which typically aligns with lower openness. There are no significant indicators of curiosity, aesthetic interests, or creativity in the provided keywords.",
-        "score": 40
-      },
-      "C": {
-        "think": "Keywords such as '会议', '团队合作', '职业发展', and '讨论' are strongly associated with conscientiousness, reflecting a high level of organization, reliability, and goal-directed behavior. The high weights of these keywords suggest that the individual is highly disciplined and focused on professional growth and teamwork, which are core aspects of conscientiousness.",
-        "score": 85
-      },
-      "E": {
-        "think": "The presence of keywords like '演讲', '交流', '发言', and '互动' indicates a propensity for social engagement and public speaking, which are hallmarks of extraversion. The high weights of these professional interaction keywords suggest that the individual is comfortable and active in social settings, particularly in a work context. However, the low weights of personal social keywords like '友谊' and '社交' slightly temper this assessment.",
-        "score": 75
-      },
-      "A": {
-        "think": "The keyword '团队合作' has a high weight, suggesting a cooperative and possibly agreeable nature in professional settings. However, other indicators of agreeableness such as empathy, altruism, or personal relationships are either absent or have very low weights, like '陪伴' and '友谊'. This suggests that while the individual may be agreeable in a work context, there is limited evidence of agreeableness in personal interactions.",
-        "score": 60
-      },
-      "N": {
-        "think": "There are no keywords that directly relate to emotional instability or high stress, and the professional keywords suggest a structured and possibly controlled environment which might aid in emotional stability. The absence of any negative emotional keywords and the presence of '快乐' (though with very low weight) hint at a generally stable emotional state, though the evidence is not strong.",
-        "score": 70
-      }
-    }
+    },
+    "uid": "47"
   },
   {
     "user": "guji",
@@ -322,7 +230,8 @@
         "think": "The user frequently mentions positive emotions (e.g., '快乐', '温馨', '放松') and lacks keywords associated with negative emotional states. This suggests good emotional stability. The only minor exception is '情绪表达' in a low-weight theme, but this does not significantly impact the overall assessment.",
         "score": 80
       }
-    }
+    },
+    "uid": "2"
   },
   {
     "user": "lily",
@@ -347,7 +256,8 @@
         "think": "关键词中缺乏直接体现情绪稳定性的词汇，但'快乐'、'休闲'、'放松'等词汇在'情感和人际关系'和'家庭和日常生活'主题中表明用户情绪较为稳定。此外，缺乏负面情绪词汇也支持情绪稳定性较高。综合考虑这些因素，情绪稳定性得分较高。",
         "score": 70
       }
-    }
+    },
+    "uid": "32"
   },
   {
     "user": "my",
@@ -372,7 +282,8 @@
         "think": "The user seems to have good emotional stability, with keywords like '勇敢', '舒适', and '温馨' suggesting a positive and calm emotional state. The absence of any high-weight keywords indicating anxiety or stress supports this interpretation.",
         "score": 70
       }
-    }
+    },
+    "uid": "29"
   },
   {
     "user": "tina",
@@ -397,7 +308,8 @@
         "think": "Keywords such as 'happiness', 'joy', 'relaxation', and 'warmth' suggest a positive emotional state and good stress management. The absence of negative emotional keywords indicates low neuroticism, implying high emotional stability.",
         "score": 75
       }
-    }
+    },
+    "uid": "44"
   },
   {
     "user": "xiaowen",
@@ -422,7 +334,8 @@
         "think": "The user's emotional stability seems high, with positive keywords like '快乐' (38.14, 情感和人际关系) and '舒适' (18.55, 家庭和日常生活). There are no strong indicators of anxiety or emotional instability, suggesting good emotional control.",
         "score": 75
       }
-    }
+    },
+    "uid": "21"
   },
   {
     "user": "yh.P小啦",
@@ -447,7 +360,8 @@
         "think": "用户的关键词中，舒适（18.27）、放松（7.17）、宁静（1.39）等表明用户倾向于平静和放松的状态，情绪稳定性较高。内向（5.38）和安静（3.58）的关键词权重较低，对情绪稳定性的负面影响较小。工作和学习主题的关键词权重极低，对情绪稳定性的贡献可以忽略。综合来看，情绪稳定性较高。",
         "score": 80
       }
-    }
+    },
+    "uid": "17"
   },
   {
     "user": "yy",
@@ -472,7 +386,8 @@
         "think": "The user appears to have high emotional stability. Keywords like '舒适', '温馨', '宁静', and '放松' are weighted significantly and suggest a calm, relaxed demeanor. The absence of high-weight negative emotional keywords (e.g., '焦虑', '压力') and the presence of positive emotional contexts indicate good emotional control and low neuroticism.",
         "score": 80
       }
-    }
+    },
+    "uid": "41"
   },
   {
     "user": "三水.",
@@ -497,32 +412,8 @@
         "think": "The user's keywords are overwhelmingly positive ('快乐', '温馨', '庆祝', '成功'), with little to no mention of stress, anxiety, or negative emotions. This suggests high emotional stability. The only keyword remotely related to mood is '心情', which is neutral and does not indicate instability.",
         "score": 85
       }
-    }
-  },
-  {
-    "user": "佳味园丁丁",
-    "scores": {
-      "O": {
-        "think": "从关键词来看，用户对美食、甜点、烹饪、烘焙、手工制作等有较高的兴趣，这些活动通常需要一定的创造力和对新事物的接受意愿，尤其是在爱好和娱乐主题下。因此，可以推测用户在开放性方面有较高的表现。",
-        "score": 75
-      },
-      "C": {
-        "think": "用户在家庭和日常生活以及爱好和娱乐主题中频繁提到美食、烹饪、烘焙等活动，这些活动需要一定的计划性和自律性，尤其是手工制作和烘焙。因此，可以推测用户在责任心方面有中等偏上的表现。",
-        "score": 65
-      },
-      "E": {
-        "think": "用户提到分享、小伙伴、家庭聚会、社交媒体等关键词，表明用户喜欢与他人互动和分享，尤其是在家庭和爱好主题下。因此，可以推测用户在外向性方面有较高的表现。",
-        "score": 80
-      },
-      "A": {
-        "think": "用户提到分享、小伙伴、家庭聚会、温馨、亲密等关键词，表明用户具有较高的合作性和共情能力，喜欢与他人建立良好的关系。因此，可以推测用户在宜人性方面有较高的表现。",
-        "score": 85
-      },
-      "N": {
-        "think": "用户提到幸福、满足、宁静、快乐时光等关键词，表明用户情绪较为稳定，能够较好地应对压力和焦虑。因此，可以推测用户在情绪稳定性方面有较高的表现。",
-        "score": 90
-      }
-    }
+    },
+    "uid": "43"
   },
   {
     "user": "冬米",
@@ -547,7 +438,8 @@
         "think": "情绪稳定性方面，用户表现出较高的情绪控制能力。'幸福'、'快乐'、'舒适'等积极情感词频繁出现，且权重较高，而负面情绪或压力相关的词几乎没有。这表明用户倾向于保持积极和稳定的情绪状态。",
         "score": 70
       }
-    }
+    },
+    "uid": "36"
   },
   {
     "user": "刘浩宇",
@@ -572,7 +464,8 @@
         "think": "The high-weight keywords 'serenity', 'relaxation', 'leisure', and 'natural scenery' suggest a calm and relaxed demeanor, indicating good emotional stability. The absence of high-weight keywords related to stress, anxiety, or negative emotions supports this. Lower-weight keywords like 'warmth' and 'friendship' further suggest positive emotional experiences. This user likely has low neuroticism (high emotional stability).",
         "score": 85
       }
-    }
+    },
+    "uid": "28"
   },
   {
     "user": "刺猬",
@@ -597,7 +490,8 @@
         "think": "The user's keywords predominantly reflect positive emotions and experiences ('romantic', 'warmth', 'happiness', 'joy', 'family affection'), with very few indicators of negative emotional states or stress. The high focus on positive interpersonal interactions and the absence of high-weight keywords related to anxiety, stress, or emotional instability suggest a high level of emotional stability. The low-weight keywords in 'social issues and public welfare' do not provide significant counterevidence to this assessment.",
         "score": 85
       }
-    }
+    },
+    "uid": "34"
   },
   {
     "user": "吕江雅",
@@ -622,7 +516,8 @@
         "think": "The keywords predominantly reflect positive emotions and social engagement, such as '快乐', '庆祝', '休闲', and '放松', which suggest good emotional stability. There is a notable absence of terms associated with stress, anxiety, or negative emotions. The user's focus on positive social interactions and leisure activities indicates a generally stable and resilient emotional state. The high level of extraversion and agreeableness also correlates with lower neuroticism, as these traits often buffer against emotional instability.",
         "score": 80
       }
-    }
+    },
+    "uid": "10"
   },
   {
     "user": "哈哈哈",
@@ -647,7 +542,8 @@
         "think": "The user mentions '情绪波动' and '情绪' in the '情感和人际关系' theme, which could indicate some emotional instability. However, these keywords have low weights (2.2), and the overall themes of '休闲', '放松', and '自然风光' suggest a generally calm and stress-free lifestyle. The presence of '努力' and '成就' might also indicate resilience and a positive approach to challenges.",
         "score": 75
       }
-    }
+    },
+    "uid": "37"
   },
   {
     "user": "喵过星空",
@@ -672,7 +568,8 @@
         "think": "The user's keywords emphasize '宁静' (tranquility), '放松' (relaxation), and '快乐' (happiness), with very few references to stress or negative emotions. The extremely low weight of environmental crisis keywords does not significantly impact this assessment, indicating high emotional stability.",
         "score": 85
       }
-    }
+    },
+    "uid": "8"
   },
   {
     "user": "噜咪",
@@ -697,7 +594,8 @@
         "think": "The user's keywords include '宁静', '放松', and '快乐', which are indicative of emotional stability. The absence of high-weight keywords related to stress or anxiety suggests a generally calm and composed demeanor. The high frequency of positive emotional keywords supports a high score in emotional stability.",
         "score": 85
       }
-    }
+    },
+    "uid": "31"
   },
   {
     "user": "小白菜",
@@ -722,7 +620,8 @@
         "think": "The user's keywords are predominantly positive ('快乐', '庆祝', '温馨', '放松'), with little to no indication of negative emotions or stress. This suggests high emotional stability (low neuroticism).",
         "score": 75
       }
-    }
+    },
+    "uid": "11"
   },
   {
     "user": "懵0.0",
@@ -747,7 +646,8 @@
         "think": "The user appears to have a stable and positive emotional state, as indicated by keywords like 'warmth', 'sunshine', 'relaxation', and 'happy memories'. The absence of negative emotional keywords and the presence of positive interactions suggest low neuroticism. The keyword 'emotion' is present but not heavily weighted, indicating minimal emotional instability.",
         "score": 70
       }
-    }
+    },
+    "uid": "3"
   },
   {
     "user": "我是月亮",
@@ -772,7 +672,8 @@
         "think": "The user's emotional stability is high, as indicated by keywords like '宁静' (320.74, 266.61), '放松' (291.77, 286.2), and '快乐' (111.55) in various contexts. These suggest a calm and positive emotional state, with low levels of anxiety or stress. The absence of high-weight negative emotional keywords further supports this assessment.",
         "score": 80
       }
-    }
+    },
+    "uid": "7"
   },
   {
     "user": "方青松",
@@ -797,7 +698,8 @@
         "think": "The absence of negative emotional keywords and the presence of positive ones like 'warm', 'cute', and 'happy' suggest good emotional stability. The user seems to manage stress well and maintains a positive outlook.",
         "score": 75
       }
-    }
+    },
+    "uid": "35"
   },
   {
     "user": "次等秘密",
@@ -822,7 +724,8 @@
         "think": "The user's keywords are overwhelmingly positive (e.g., '快乐', '宁静', '休闲', '庆祝'), with little to no indication of stress, anxiety, or negative emotions. The focus on enjoyable and relaxing activities, along with stable social relationships, suggests high emotional stability. The absence of high-weight negative terms supports this interpretation.",
         "score": 85
       }
-    }
+    },
+    "uid": "5"
   },
   {
     "user": "汀",
@@ -847,7 +750,8 @@
         "think": "The user's keywords like '快乐', '放松', '温馨', and '休闲' suggest a generally positive and stable emotional state. The absence of negative emotional keywords and the presence of supportive and positive interactions in '情感和人际关系' and '家庭和日常生活' indicate good emotional control and low anxiety. The high weights of these positive keywords reinforce this assessment.",
         "score": 80
       }
-    }
+    },
+    "uid": "13"
   },
   {
     "user": "江暮",
@@ -872,7 +776,8 @@
         "think": "The user appears to have high emotional stability, given the positive and warm keywords like 'happiness', 'warmth', 'family', and 'support'. There are no negative or anxiety-related keywords, suggesting good emotional control and low neuroticism.",
         "score": 80
       }
-    }
+    },
+    "uid": "38"
   },
   {
     "user": "汤元（张熙元）",
@@ -897,7 +802,8 @@
         "think": "The keywords '幸福', '宁静', '放松', '快乐', '温暖' with high weights in '情感和人际关系' and '旅行和冒险' themes indicate a generally positive and stable emotional state. The absence of negative emotional keywords suggests low neuroticism, meaning high emotional stability.",
         "score": 85
       }
-    }
+    },
+    "uid": "26"
   },
   {
     "user": "洛克曼",
@@ -922,7 +828,8 @@
         "think": "The user's high-weight keywords in travel and adventure ('风景', '户外活动', '宁静', '生态') suggest a preference for calm and possibly stress-free environments. The work-related keywords ('职业发展', '学术成就') do not indicate high anxiety or emotional instability. The low-weight keywords in family and hobbies are neutral in this regard. Therefore, the user's emotional stability is high.",
         "score": 80
       }
-    }
+    },
+    "uid": "14"
   },
   {
     "user": "洛杉矶的W",
@@ -947,7 +854,8 @@
         "think": "用户在旅行和冒险方面的关键词如‘宁静’、‘风景’、‘自然’、‘美丽’等，权重较高，表明用户情绪较为稳定，能够享受宁静和美丽的自然景观。情感和人际关系方面的‘情感’、‘陪伴’、‘温暖’等词语也反映了用户情绪较为稳定。因此，情绪稳定性得分较高。",
         "score": 85
       }
-    }
+    },
+    "uid": "39"
   },
   {
     "user": "潇潇",
@@ -972,7 +880,8 @@
         "think": "The user's keywords are overwhelmingly positive, focusing on 'happiness', 'celebration', 'blessings', and 'joy'. There is little to no indication of negative emotional states or stress. The only slight hint of negativity comes from 'tension' and 'dissatisfaction' in the 'Social Issues and Public Welfare' theme, but these keywords have very low weights (0.69) and are not representative of the user's overall emotional tone. This suggests high emotional stability.",
         "score": 90
       }
-    }
+    },
+    "uid": "45"
   },
   {
     "user": "烂泥",
@@ -997,7 +906,8 @@
         "think": "The user's preference for 'quiet', 'relaxation', and 'natural' settings, along with positive terms like 'happy' and 'warm', suggests good emotional stability. The absence of negative emotional terms further supports this. However, the moderate weight of these terms means the score is not extremely high.",
         "score": 70
       }
-    }
+    },
+    "uid": "30"
   },
   {
     "user": "煎饼",
@@ -1022,7 +932,8 @@
         "think": "The user frequently mentions '放松', '宁静', '快乐', and '幸福' in various contexts, which suggest a generally calm and positive emotional state. The absence of high-weight keywords related to stress, anxiety, or negative emotions indicates good emotional stability. The overall positive emotional tone across different themes supports a high level of emotional stability (low neuroticism).",
         "score": 85
       }
-    }
+    },
+    "uid": "12"
   },
   {
     "user": "爱吃萝卜爱吃菜",
@@ -1047,7 +958,8 @@
         "think": "The user's keywords are overwhelmingly positive ('快乐', '乐趣', '温馨', '庆祝') and lack any negative emotional indicators. The high focus on travel, family, and hobbies suggests a stable and relaxed emotional state. The absence of stress-related or anxious keywords supports high emotional stability.",
         "score": 85
       }
-    }
+    },
+    "uid": "16"
   },
   {
     "user": "特恩",
@@ -1072,7 +984,8 @@
         "think": "The presence of keywords like 'happiness', 'relaxation', 'tranquility', and 'support' suggests good emotional control and low anxiety. The absence of negative emotional keywords and the positive context of most emotional keywords indicate high emotional stability. The weights are supportive of this conclusion.",
         "score": 85
       }
-    }
+    },
+    "uid": "23"
   },
   {
     "user": "特特",
@@ -1097,7 +1010,8 @@
         "think": "关键词中与情绪稳定性相关的信息较少，主要集中在‘快乐’（34.0）、‘幸福’（27.82）、‘温暖’（6.24）等词，表明用户情绪较为稳定。缺乏负面情绪相关的关键词，暗示用户情绪控制能力较强。权重较高的词如‘快乐’和‘幸福’进一步强化了这一特质。",
         "score": 85
       }
-    }
+    },
+    "uid": "4"
   },
   {
     "user": "纨兰",
@@ -1122,7 +1036,8 @@
         "think": "The repeated use of '宁静' (in both travel and social contexts) and the absence of high-weight keywords related to stress or anxiety suggest emotional stability. The overall tone of the keywords is positive and calm, with a focus on enjoyment and relaxation, indicating low neuroticism.",
         "score": 85
       }
-    }
+    },
+    "uid": "15"
   },
   {
     "user": "苹果人",
@@ -1147,7 +1062,8 @@
         "think": "The frequent mention of '放松', '休闲', '快乐', '阳光' and the absence of negative emotional keywords indicate a generally positive and stable emotional state. This suggests high emotional stability (low neuroticism).",
         "score": 70
       }
-    }
+    },
+    "uid": "1"
   },
   {
     "user": "蜉蝣",
@@ -1172,7 +1088,8 @@
         "think": "The user's keywords are overwhelmingly positive, with terms like '快乐', '幽默', '温馨', and '放松'. There are no significant indicators of stress, anxiety, or negative emotionality. This suggests high Emotional Stability (low Neuroticism). The few keywords related to '工作和学习' like '纪律' and '军训' do not seem to carry negative emotional connotations.",
         "score": 85
       }
-    }
+    },
+    "uid": "27"
   },
   {
     "user": "说笑",
@@ -1197,32 +1114,8 @@
         "think": "The keywords '宁静', '静谧', '舒适' in '旅行和冒险' and '家庭和日常生活' suggest a calm and stable emotional state. The presence of '学习压力' is noted but with low weights, indicating minimal anxiety or stress. This indicates high Emotional Stability.",
         "score": 80
       }
-    }
-  },
-  {
-    "user": "赵阳",
-    "scores": {
-      "O": {
-        "think": "The user's keywords heavily emphasize travel, adventure, and nature, with high weights for '风景' (93.88), '摄影' (79.44), '自然' (68.61), and '探索' (46.94). These suggest a strong curiosity, appreciation for aesthetics, and willingness to engage with new experiences, all indicative of high openness. The presence of '生活方式' (29.96) and '户外活动' (50.55) further supports this trait.",
-        "score": 90
-      },
-      "C": {
-        "think": "There is limited information directly related to conscientiousness. The keywords '时间管理' (4.16) and '团队合作' (6.24) suggest some level of planning and reliability, but these are low-weight terms. The majority of keywords focus on leisure and exploration, which do not strongly indicate high conscientiousness. However, the presence of '健身' (14.98) and '运动' (14.98) might imply some discipline.",
-        "score": 60
-      },
-      "E": {
-        "think": "The user shows a mix of social and solitary activities. High-weight keywords like '户外活动' (50.55) and '社交' (9.59) suggest some social engagement, but the emphasis is more on individual or small-group activities like '摄影' (79.44) and '休闲' (61.39). The presence of '互动' (17.97) and '分享' (14.98) indicates moderate extraversion.",
-        "score": 70
-      },
-      "A": {
-        "think": "Keywords like '家庭聚餐' (17.97), '温馨' (17.97), '互动' (17.97), and '分享' (14.98) suggest a cooperative and empathetic nature, indicative of high agreeableness. The low-weight terms '理解' (0.69) and '支持' (0.69) also align with this trait, though their impact is minimal due to low weights.",
-        "score": 80
-      },
-      "N": {
-        "think": "The user frequently mentions '放松' (61.39 and 14.98) and '休闲' (61.39), which suggest a calm and stress-free approach to life. The absence of high-weight keywords related to anxiety or stress supports high emotional stability. The low-weight term '忙碌' (4.16) is the only slight counterpoint, but it is not significant enough to lower the score.",
-        "score": 85
-      }
-    }
+    },
+    "uid": "40"
   },
   {
     "user": "🐏",
@@ -1247,6 +1140,7 @@
         "think": "The user appears to have high emotional stability. Positive keywords like 'happiness', 'joy', 'happiness', and 'relaxation' dominate their profile, with only a minor mention of 'stress' in the work and study context, which is not highly weighted. Their overall emotional tone is positive and stable, indicating low neuroticism.",
         "score": 75
       }
-    }
+    },
+    "uid": "25"
   }
 ]
