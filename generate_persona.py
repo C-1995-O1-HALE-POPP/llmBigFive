@@ -16,7 +16,8 @@ USER_PROMPT = ["""请根据下面按主题关键词组合，为「我」生成�
 
 现在，我提供的{主题, 关键词}是{""", """}，你的输出是："""]
 
-API_KEY = "sk-eaae74a3834b4e8bbcfadce9cc67a1af"
+import os
+API_KEY = os.getenv("DASHSCOPE_API_KEY")
 K = 10  # 保留关键词数
 API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
 MODEL = "qwen3-8b"

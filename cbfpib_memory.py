@@ -1,5 +1,3 @@
-
-
 import argparse
 import json
 import re
@@ -12,9 +10,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 from tqdm import tqdm
 from loguru import logger
-
+import os
 # ===== 配置区 =====
-API_KEY   = "sk-eaae74a3834b4e8bbcfadce9cc67a1af"
+API_KEY   = os.getenv("DASHSCOPE_API_KEY", "sk-eaae74a3834b4e8bbcfadce9cc67a1af")
 API_URL   = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
 MODEL     = "qwen-turbo"
 

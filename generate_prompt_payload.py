@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-generate_prompt_payload.py
-
-依赖:
-    pip install pandas numpy
-
-用法:
-    python generate_prompt_payload.py \
-        --input  人格特质48位受试者原始数据.json \
-        --output bigfive_prompt_payload.json \
-        --topk   80          # (可选) 每人保留的关键词条目数
-"""
 import json
 import math
 import argparse

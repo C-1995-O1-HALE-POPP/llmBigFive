@@ -1,21 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-update_users_json.py
-
-功能：
-1. 从 Excel（xlsx）文件读取“用户名称 ↔ 编号”映射
-2. 根据映射修改 JSON：
-   a. 若 JSON 中的 name 在映射中不存在，则删除该条目
-   b. 若存在，则在条目中新增字段 "uid"，其值为映射中的编号
-
-用法（命令行示例）：
-    python update_users_json.py \
-        --excel "人格朋友圈尝试代入分析.xlsx" \
-        --json  "人格特质50位受试者原始数据.json" \
-        --output "updated_人格特质50位受试者.json"
-"""
-
 import json
 import argparse
 from pathlib import Path

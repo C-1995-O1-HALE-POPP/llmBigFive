@@ -8,9 +8,9 @@ from collections import defaultdict
 from loguru import logger
 import requests
 import re
-
+import os
 # === 配置区 ===
-API_KEY = "sk-eaae74a3834b4e8bbcfadce9cc67a1af"
+API_KEY = os.getenv("DASHSCOPE_API_KEY")
 API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
 MODEL = "deepseek-v3"
 HEADERS = {

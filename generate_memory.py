@@ -43,8 +43,8 @@ USER_PROMPT = [
 现在请你输出""", """句记忆，对应的的「主题, 关键词」是{""",
     """}。请输出："""
 ]
-
-API_KEY = "sk-eaae74a3834b4e8bbcfadce9cc67a1af"
+import os
+API_KEY = os.getenv("DASHSCOPE_API_KEY")
 K = 10  # 保留关键词数
 API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
 MODEL = "qwen-turbo"

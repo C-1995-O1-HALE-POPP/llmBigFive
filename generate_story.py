@@ -5,12 +5,12 @@ import requests
 from loguru import logger
 from tqdm import tqdm
 import random
-
+import os
 
 # ============ 配置区 ============
 API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
 MODEL = "qwen-turbo"
-API_KEY = "sk-eaae74a3834b4e8bbcfadce9cc67a1af"
+API_KEY = os.getenv("DASHSCOPE_API_KEY")
 HEADERS = {"Content-Type": "application/json", "Authorization": f"Bearer {API_KEY}"}
 
 SOURCE_FILE = "bigfive_story.json"    # 上一步增量生成的文件
