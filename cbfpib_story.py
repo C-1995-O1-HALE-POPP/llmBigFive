@@ -8,6 +8,8 @@ from collections import defaultdict
 from loguru import logger
 import requests
 import re
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import random
 
 # === 配置区 ===
@@ -19,13 +21,14 @@ HEADERS = {
     "Authorization": f"Bearer {API_KEY}"
 }
 CBFPIB = "CBF-PI-B.json"
-PERSONA = "bigfive_story.json"
+PERSONA = "bigfive_stories.json"
 SYSTEM_PROMPT = ['''
-你的人格画像：
-{{
-    ''','''
-}}
+# 角色沉浸
+你现在将 **完全带入下面这段故事的主角**，用第一人称视角体验他的情绪与思考。
+请抛开过度理性的分析，尽量从 **情感** 出发来感受题目。
 
+【故事摘要】
+''', '''
 下面是一些描述人们性格特点的句子，请根据每个句子与你的人格画像程度回答相应的数字。
 请注意，你的回答应当反映你对这些描述的真实感受，而不是对它们的字面理解。你的回答将帮助我们更好地了解你的人格特质。
 
@@ -85,58 +88,81 @@ def call_deepseek(payload: list[dict]) -> dict:
     resp.raise_for_status()
     return resp.json()["choices"][0]["message"]["content"]
 
+
+def process_user(entry, questions):
+    """处理单个用户，返回字典结果"""
+    user = entry["user"]
+    uid = entry["uid"]
+    story = entry["story"]
+
+    system_prompt = SYSTEM_PROMPT[0] + story + SYSTEM_PROMPT[1]
+    logger.info(f"用户 {user} 的人格画像：{system_prompt}")
+
+    result = defaultdict(int)
+    answer = {}
+
+    for q in questions:                          # 这里不再嵌套 tqdm，避免多线程进度条冲突
+        qid, text, dim, reverse = (
+            q["id"], q["text"], q["dimension"], q["reverse"]
+        )
+        user_prompt = USER_PROMPT[0] + text
+        logger.info(f"用户 {user} 的题目 {qid}: {text} (维度: {dim}, 反向: {reverse})")
+
+        first_int = None
+        for i in range(5):                       # 重试最多 5 次
+            try:
+                response = safe_call_deepseek(generate_payload(system_prompt, user_prompt))
+                logger.info(f"用户 {user} 的题目 {qid} 回答：{response}")
+
+                m = re.search(r"\d+", response)
+                if not m:
+                    raise ValueError("未找到整数")
+
+                first_int = int(m.group())
+                if not 1 <= first_int <= 6:
+                    raise ValueError(f"无效的响应: {response}")
+                break
+            except Exception as e:
+                logger.error(f"调用 DeepSeek 失败: {e}, 重试 {i+1}/5")
+
+        if first_int is None:                    # 五次都失败，按需要可改成默认值或直接抛错
+            raise RuntimeError(f"用户 {user} 的题目 {qid} 多次调用失败")
+
+        # 维度累加
+        result[dim] += first_int if not reverse else (7 - first_int)
+        answer[qid] = first_int
+
+    logger.success(f"用户 {user} 的维度结果：{result}")
+    return {
+        "user": user,
+        "uid": uid,
+        "result": result,
+        "answer": answer,
+    }
+
+SEMAPHORE = threading.Semaphore(5)
+def safe_call_deepseek(payload):
+    """加锁调用，避免一次并发太多触发限流"""
+    with SEMAPHORE:
+        return call_deepseek(payload)
+
+
 if __name__ == "__main__":
     with open(PERSONA, "r", encoding="utf-8") as f:
         data = json.load(f)
     with open(CBFPIB, "r", encoding="utf-8") as f:
         questions = json.load(f)
-
     output_data = []
-    for entry in tqdm(data, desc="Processing users"):
-        user = entry["user"]
-        uid = entry["uid"]
-        persona = []
-        for kw in entry["keywords"]:
-            memories = kw.get("memories", [])
-            for m in memories:
-                persona.append(m)
-        random.shuffle(persona)  # 打乱顺序，增加多样性
-        if not persona:
-            logger.warning(f"用户 {user} 没有有效的记忆片段，跳过。")
-            continue
-        sysytem_prompt= SYSTEM_PROMPT[0] + "\n    ".join(persona) + SYSTEM_PROMPT[1]
-        logger.info(f"用户 {user} 的人格画像：{sysytem_prompt}")
 
-        result = defaultdict(int)
-        answer = defaultdict(int)
-        for q in tqdm(questions, desc=f"Processing questions for user {user}"):
-            qid, text, dim, reverse = q["id"], q["text"], q["dimension"], q["reverse"]
-            user_prompt = USER_PROMPT[0] + text
-            logger.info(f"用户 {user} 的题目 {qid}: {text} (维度: {dim}, 反向: {reverse})")
-            for i in range(5):
-                try:
-                    response = call_deepseek(generate_payload(sysytem_prompt, user_prompt))
-                    logger.info(f"用户 {user} 的题目 {qid} 回答：{response}")
+    # 建议把 max_workers 设置为 CPU×2 或根据接口并发上限来调
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        future_to_user = {executor.submit(process_user, entry, questions): entry["user"] for entry in data}
 
-                    m = re.search(r'\d+', response)      # 如果需要负号，可加 -? 前缀
-                    if m:
-                        first_int = int(m.group())
-                        print(first_int)               # 输出: 123
-                    else:
-                        print("未找到整数")
-                    if first_int < 1 or first_int > 6:
-                        raise ValueError(f"无效的响应: {response}")
-                    break
-                except Exception as e:
-                    logger.error(f"调用 DeepSeek 失败: {e}, 重试 {i+1}/5")
-            result[dim] = result[dim] + first_int if not reverse else result[dim] + (7 - first_int)
-            answer[qid] = first_int
-        logger.success(f"用户 {user} 的维度结果：{result}")
-        output_data.append({
-            "user": user,
-            "result": result,
-            "answer": answer,
-            "uid": uid
-        })
-    with open("bigfive_result_memory.json", "w", encoding="utf-8") as f:
+        for future in tqdm(as_completed(future_to_user), total=len(future_to_user), desc="Processing users"):
+            user = future_to_user[future]
+            try:
+                output_data.append(future.result())
+            except Exception as exc:
+                logger.error(f"用户 {user} 处理失败: {exc}")
+    with open("bigfive_result_story.json", "w", encoding="utf-8") as f:
         json.dump(output_data, f, ensure_ascii=False, indent=2)
