@@ -23,7 +23,7 @@ MAX_API_CONC    = 6                    # 同时 hitting API 的线程数
 MAX_RETRY       = 5
 SEMAPHORE = threading.Semaphore(MAX_API_CONC)
 
-model, repeat, system_prompt_raw = "qwen_turbo", 1, ""
+model, repeat, system_prompt_raw, data_type = "qwen_turbo", 1, "", "memory"
 
 # ---------------- 请求头 ----------------
 HEADERS = {
@@ -65,7 +65,13 @@ def process_user(entry: dict, questions: list[dict], seed: int = 42) -> dict:
 
     global system_prompt_raw, repeat
     # 1) 取出记忆片段
-    persona = [m for kw in entry.get("keywords", []) for m in kw.get("memories", [])]
+    if data_type == "memory":
+        persona = [m for kw in entry.get("keywords", []) for m in kw.get("memories", [])]
+    elif data_type == "story":
+        persona = entry.get("story", None)
+    else:
+        persona = None
+    
     answer, result = {}, {}
     for q in questions:
         answer[q["id"]], result[q["dimension"]] = {}, defaultdict(int)
@@ -74,9 +80,12 @@ def process_user(entry: dict, questions: list[dict], seed: int = 42) -> dict:
         if not persona:
             system_prompt = system_prompt_raw[1]
         else:
-            random.seed(seed)
-            random.shuffle(persona)
-            system_prompt = system_prompt_raw[0] + "\n    ".join(persona) + system_prompt_raw[1]
+            if isinstance(persona, list):
+                random.seed(seed)
+                random.shuffle(persona)
+                system_prompt = system_prompt_raw[0] + "\n    ".join(persona) + system_prompt_raw[1]
+            elif isinstance(persona, str):
+                system_prompt = system_prompt_raw[0] + persona + system_prompt_raw[1]
         # logger.debug(f"用户 {user} system_prompt 构造完成：{system_prompt}")
 
         # 2) 按题目循环
@@ -121,7 +130,7 @@ def main():
     args = parser.parse_args()
 
     # 设置全局变量
-    global model, repeat, system_prompt_raw
+    global model, repeat, system_prompt_raw, data_type
     model, data_type, cot, zeroshot, repeat = args.model, args.data_type, args.cot, args.zeroshot, args.repeat
     seed = args.seed
     system_prompt_raw = generate_system_prompt(data_type, cot, zeroshot)
