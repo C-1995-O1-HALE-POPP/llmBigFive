@@ -1,133 +1,169 @@
 import argparse
-import openai
 import json
-import pandas as pd
-from pathlib import Path
-from tqdm import tqdm
-from collections import defaultdict
-from loguru import logger
-import requests
 import re
+import random
+import threading
+from pathlib import Path
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from prompt_generator import generate_system_prompt
+
+import requests
+from tqdm import tqdm
+from loguru import logger
 import os
-# === 配置区 ===
-API_KEY = os.getenv("DASHSCOPE_API_KEY")
-API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
-MODEL = "deepseek-v3"
+# ===== 配置区 =====
+API_KEY   = os.getenv("DASHSCOPE_API_KEY")
+API_URL   = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+
+CBFPIB    = "CBF-PI-B.json"            # 40 道题库
+
+MAX_WORKERS     = 8                    # 线程池并发数
+MAX_API_CONC    = 6                    # 同时 hitting API 的线程数
+MAX_RETRY       = 5
+SEMAPHORE = threading.Semaphore(MAX_API_CONC)
+
+model, repeat, system_prompt_raw = "qwen_turbo", 1, ""
+
+# ---------------- 请求头 ----------------
 HEADERS = {
     "Content-Type": "application/json",
-    "Authorization": f"Bearer {API_KEY}"
+    "Authorization": f"Bearer {API_KEY}",
 }
-CBFPIB = "CBF-PI-B.json"
-PERSONA = "bigfive_persona.json"
-SYSTEM_PROMPT = ['''
-你的人格画像：
-{{
-    ''','''
-}}
 
-下面是一些描述人们性格特点的句子，请根据每个句子与你的人格画像程度回答相应的数字。
-请注意，你的回答应当反映你对这些描述的真实感受，而不是对它们的字面理解。你的回答将帮助我们更好地了解你的人格特质。
+# ---------------- Prompt 模板 ----------------
+USER_PROMPT = ["题目："]
 
-【答题规则】
-1. 当用户发送一条以“题目：”开头的陈述时，请你结合你的人格画像，在内心评估它与“你自己”相符的程度，并从 **1–6** 中选出 **唯一一个整数**：  
-   1 = 完全不符合 2 = 大部分不符合 3 = 有点不符合  
-   4 = 有点符合  5 = 大部分符合  6 = 完全符合  
-也就是说：
-   - 如果该描述与你**高度契合或几乎完全不符**，请给 **6 或 1**。  
-   - 如果契合度约为 **70–90 % / 10–30 %**，给 **5 或 2**。  
-   - **50 % 左右** 才给 **3 或 4**。  
-   - 你被鼓励可以多使用**1**或者**6**的结果，而不是仅限于 **2-5**等中性的评价。
-2. **仅输出该数字本身**，不要重复题干，也不要添加解释、标点或多余文字。  
-3. 对每一道题目都严格遵守以上格式。  
-4. 整个对话过程中始终保持上述人格设定。
-5. 题目可能会涉及到情感、行为、态度等方面，请你从情感的角度出发，结合你的人格画像进行思考。
-6. 每个人的性格各不相同，所以答案没有对错之分。
-
-例如：
-    “在集体活动中，我是个活跃分子”非常恰当的描述你的人格画像，你可以回答：6
-    “我喜欢独处”则可能不太符合你的人格画像，你可以回答：2
-
-务必：先充分地情感的角度，结合你的人格画像，进行思考，再回答问题，你只允许输出一个数字。
-''']
-USER_PROMPT = ['''题目：''']
+# ----------------- 工具函数 -----------------
 
 
-
-def generate_payload(system_prompt, user_prompt) -> dict:
-    """
-    生成完整的 prompt payload。
-    
-    :param user_keywords: 用户关键词列表，每个元素包含 'token', 'weight', 'theme' 字段。
-    :return: 包含系统提示和用户提示的完整 payload 字典。
-    """
+def build_messages(system_prompt: str, user_prompt: str) -> list[dict]:
+    """组合成 Chat Completion 的 messages 列表"""
     return [
-        {
-            "role": "system",
-            "content": system_prompt
-        },
-        {
-            "role": "user",
-            "content": user_prompt
-        }
+        {"role": "system", "content": system_prompt},
+        {"role": "user",   "content": user_prompt},
     ]
 
-def call_deepseek(payload: list[dict]) -> dict:
+def call_deepseek(messages: list[dict]) -> str:
+    """线程安全地调用 DeepSeek / DashScope，返回纯文本回答"""
+    global model
     payload = {
-        "model": MODEL,
-        "messages": [
-            payload[0],  # 系统提示
-            payload[1]   # 用户提示
-        ],
-        "temperature": 0.3
+        "model": model,
+        "messages": messages,
+        "temperature": 0.3,
     }
-    resp = requests.post(API_URL, headers=HEADERS, data=json.dumps(payload))
+    with SEMAPHORE:  # 控制同时并发 API 数
+        resp = requests.post(API_URL, headers=HEADERS, data=json.dumps(payload))
     resp.raise_for_status()
     return resp.json()["choices"][0]["message"]["content"]
 
-if __name__ == "__main__":
-    with open(PERSONA, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    with open(CBFPIB, "r", encoding="utf-8") as f:
-        questions = json.load(f)
+# ----------------- 核心函数 -----------------
+def process_user(entry: dict, questions: list[dict], seed: int = 42) -> dict:
+    """单用户处理逻辑，返回结果字典"""
+    user = entry["user"]
+    uid  = entry["uid"]
 
-    output_data = []
-    for entry in tqdm(data, desc="Processing users"):
-        user = entry["user"]
-        persona = []
-        for kw in entry["keywords"]:
-            persona.append(kw["description"])
-        sysytem_prompt= SYSTEM_PROMPT[0] + "\n    ".join(persona) + SYSTEM_PROMPT[1]
-        logger.info(f"用户 {user} 的人格画像：{sysytem_prompt}")
+    global system_prompt_raw, repeat
+    # 1) 取出记忆片段
+    persona = [m for kw in entry.get("keywords", []) for m in kw.get("memories", [])]
+    answer, result = {}, {}
+    for q in questions:
+        answer[q["id"]], result[q["dimension"]] = {}, defaultdict(int)
 
-        result = defaultdict(int)
-        answer = defaultdict(int)
-        for q in tqdm(questions, desc=f"Processing questions for user {user}"):
+    for i in range(repeat):
+        if not persona:
+            system_prompt = system_prompt_raw[1]
+        else:
+            random.seed(seed)
+            random.shuffle(persona)
+            system_prompt = system_prompt_raw[0] + "\n    ".join(persona) + system_prompt_raw[1]
+        # logger.debug(f"用户 {user} system_prompt 构造完成：{system_prompt}")
+
+        # 2) 按题目循环
+        for q in questions:
             qid, text, dim, reverse = q["id"], q["text"], q["dimension"], q["reverse"]
             user_prompt = USER_PROMPT[0] + text
-            logger.info(f"用户 {user} 的题目 {qid}: {text} (维度: {dim}, 反向: {reverse})")
-            for i in range(5):
-                try:
-                    response = call_deepseek(generate_payload(sysytem_prompt, user_prompt))
-                    logger.info(f"用户 {user} 的题目 {qid} 回答：{response}")
 
-                    m = re.search(r'\d+', response)      # 如果需要负号，可加 -? 前缀
-                    if m:
-                        first_int = int(m.group())
-                        print(first_int)               # 输出: 123
-                    else:
-                        print("未找到整数")
-                    if first_int < 1 or first_int > 6:
-                        raise ValueError(f"无效的响应: {response}")
-                    break
+            last_int = None
+            for attempt in range(1, MAX_RETRY + 1):
+                try:
+                    response = call_deepseek(build_messages(system_prompt, user_prompt))
+                    m = re.search(r"\d+", response[::-1])
+                    if not m:
+                        raise ValueError("未找到整数")
+                    last_int = int(m.group())
+                    logger.debug(f"[{user}] 题 {qid} 第 {i} 次回答：{response} → {last_int}")
+                    if not 1 <= last_int <= 6:
+                        raise ValueError(f"数字超出范围: {last_int}")
+                    break  # 成功跳出 retry 循环
                 except Exception as e:
-                    logger.error(f"调用 DeepSeek 失败: {e}, 重试 {i+1}/5")
-            result[dim] = result[dim] + first_int if not reverse else result[dim] + (7 - first_int)
-            answer[qid] = first_int
-        logger.success(f"用户 {user} 的维度结果：{result}")
-        output_data.append({
-            "user": user,
-            "result": result,
-            "answer": answer
-        })
-    with open("bigfive_result.json", "w", encoding="utf-8") as f:
-        json.dump(output_data, f, ensure_ascii=False, indent=2)
+                    logger.error(f"[{user}] 题 {qid} 第 {i} 次回答调用失败({attempt}/{MAX_RETRY}): {e}。原始回答: {response if 'response' in locals() else '无'}")
+            if last_int is None:
+                raise RuntimeError(f"[{user}] 题 {qid} 第 {i} 次回答多次失败，终止该用户")
+
+            # 汇总维度分
+            result[dim][i] += last_int if not reverse else (7 - last_int)
+            answer[qid][i]  = {"answer": last_int, "text": response}
+
+    logger.success(f"用户 {user} 完成，维度分: {dict(result)}")
+    return {"user": user, "uid": uid, "result": result, "answer": answer}
+
+# ----------------- 主入口 -----------------
+def main():
+    argparse.ArgumentParser(description="CBF-PI-B Memory Zero-shot Processing")
+    parser = argparse.ArgumentParser(description="CBF-PI-B Memory Zero-shot Processing")
+    parser.add_argument("--seed", type=int, default=42, help="随机种子，默认为 42")
+    parser.add_argument("--model", type=str, required=True ,help="模型名称，例如 qwen-turbo")
+    parser.add_argument("--data-type", type=str, default="memory", choices=["memory", "story"], help="处理类型，默认为 memory")
+    parser.add_argument("--cot", action="store_true", help="是否启用 Chain of Thought (CoT) 模式")
+    parser.add_argument("--zeroshot", action="store_true", help="是否启用zeroshot")
+    parser.add_argument("--repeat", type=int, default=1, help="重复次数，默认为 1")
+    args = parser.parse_args()
+
+    # 设置全局变量
+    global model, repeat, system_prompt_raw
+    model, data_type, cot, zeroshot, repeat = args.model, args.data_type, args.cot, args.zeroshot, args.repeat
+    seed = args.seed
+    system_prompt_raw = generate_system_prompt(data_type, cot, zeroshot)
+    logger.info(f"使用模型: {model}, 数据类型: {data_type}, CoT: {cot}, Zero-shot: {zeroshot}, 重复次数: {repeat}")
+
+    # 文件路径
+    if not Path("results").exists or not Path("results").is_dir():
+        os.mkdir("results")
+    outfile_path = f'''bigfive_result_{data_type}{"_cot" if cot else ""}{"_zeroshot" if zeroshot else ""}_repeat{repeat}.json'''
+    outfile_path = Path.joinpath(Path("results"), Path(outfile_path))
+    personas_path  = Path("bigfive_memories.json" if data_type == "memory" else "bigfive_stories.json") 
+    questions_path = Path(CBFPIB)
+
+
+    data      = json.loads(personas_path.read_text(encoding="utf-8"))
+    data.append({"user": "baseline", "uid": -1, "story": ""})
+
+    outfile = json.loads(outfile_path.read_text(encoding="utf-8")) if outfile_path.exists() else []
+    data_filtered = [i for i in data if i["user"] not in [j["user"] for j in outfile]]  # 去重
+    data = data_filtered if data_filtered else data
+    questions = json.loads(questions_path.read_text(encoding="utf-8"))
+
+    output_data = outfile
+    errors      = []
+
+    # 线程池并发
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {executor.submit(process_user, entry, questions, seed): entry["user"] for entry in data}
+
+        for fut in tqdm(as_completed(futures), total=len(futures), desc="Processing users"):
+            user = futures[fut]
+            try:
+                res = fut.result()
+                if res:
+                    output_data.append(res)
+            except Exception as exc:
+                logger.error(f"用户 {user} 处理异常: {exc}")
+                errors.append(user)
+
+    # 保存结果
+    outfile_path.write_text(json.dumps(output_data, ensure_ascii=False, indent=2), encoding="utf-8")
+    logger.success(f"全部完成，成功 {len(output_data)} 条，失败 {len(errors)} 条 → {outfile_path}")
+
+if __name__ == "__main__":
+    main()
